@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pessi\\source\\repos\\Kilometrikorvaus\\Kilometrikorvaus\\Kilometrikorvaus.csproj": {}
+    "C:\\Users\\Pessi\\Desktop\\mainprojects\\op-red\\Kilometrikorvaus\\Kilometrikorvaus.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pessi\\source\\repos\\Kilometrikorvaus\\Kilometrikorvaus\\Kilometrikorvaus.csproj": {
+    "C:\\Users\\Pessi\\Desktop\\mainprojects\\op-red\\Kilometrikorvaus\\Kilometrikorvaus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pessi\\source\\repos\\Kilometrikorvaus\\Kilometrikorvaus\\Kilometrikorvaus.csproj",
+        "projectUniqueName": "C:\\Users\\Pessi\\Desktop\\mainprojects\\op-red\\Kilometrikorvaus\\Kilometrikorvaus.csproj",
         "projectName": "Kilometrikorvaus",
-        "projectPath": "C:\\Users\\Pessi\\source\\repos\\Kilometrikorvaus\\Kilometrikorvaus\\Kilometrikorvaus.csproj",
+        "projectPath": "C:\\Users\\Pessi\\Desktop\\mainprojects\\op-red\\Kilometrikorvaus\\Kilometrikorvaus.csproj",
         "packagesPath": "C:\\Users\\Pessi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pessi\\source\\repos\\Kilometrikorvaus\\Kilometrikorvaus\\obj\\",
+        "outputPath": "C:\\Users\\Pessi\\Desktop\\mainprojects\\op-red\\Kilometrikorvaus\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
