@@ -8,7 +8,7 @@ class MainProgram
             Console.WriteLine("Kilometrikorvaus | Kirjoita numero" + Environment.NewLine + "[1] Syötä matkoja" + Environment.NewLine +
             "[2] Tarkastele maksuja" + Environment.NewLine + "[0] Lopetus");
             Console.WriteLine();
-            var mm1 = Console.ReadLine(); //TODO: fix this CS8600 issue
+            var mm1 = Console.ReadLine();
             int mainMenu1 = Convert.ToInt32(mm1);
 
             if (mainMenu1 == 0)
@@ -49,7 +49,7 @@ class MainProgram
             + "[1] Luo uusi matka" + Environment.NewLine + "[2] Korvauksen maksutiedot"
             + Environment.NewLine + "[0] Takaisin");
             Console.WriteLine();
-            var mm2 = Console.ReadLine(); //TODO: fix this CS8600 issue
+            var mm2 = Console.ReadLine();
             int mainMenu2 = Convert.ToInt32(mm2);
 
             if (mainMenu2 == 1)
