@@ -3,6 +3,7 @@ class MainProgram
 {
     public void TextUserInterface()
     {
+        TravelDetailsCollector travelDetailsCollector = new();
         while (true) // loops until the input is valid
         {
             Console.WriteLine("Kilometrikorvaus | Kirjoita numero" + Environment.NewLine + "[1] Syötä matkoja" + Environment.NewLine +
