@@ -53,9 +53,29 @@ class MainProgram
             var mm2 = Console.ReadLine();
             int mainMenu2 = Convert.ToInt32(mm2);
 
+
             if (mainMenu2 == 1)
             {
-                Console.WriteLine("Tähän koodi, millä täytät matkan tiedot: ");
+                decimal kilometriKorvaus = 0.46m; //korvaus euroina per kilometri
+
+                Console.WriteLine("Syötä matkan pituus kilometreinä");
+                int syötetytKilometrit = Int32.Parse(Console.ReadLine());
+                
+                if (syötetytKilometrit < 15)
+                {
+                    Console.WriteLine("Alle 15 km matkasta ei saa korvausta");
+                } 
+
+                else
+                {
+                    Console.WriteLine();
+                    decimal maksettavaKorvaus = syötetytKilometrit * kilometriKorvaus;
+
+                    Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+
+
+                }
+
                 continue;
             }
 
