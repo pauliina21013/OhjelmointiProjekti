@@ -28,9 +28,18 @@ class MainProgram
 
             if (mainMenu1 == 2)
             {
-                // tarkastele maksuja
-                // if syötäMatkoja == empty, Console.WriteLine("Ei maksamattomia maksuja");
-                Console.WriteLine("Tähän tulee esille ohjelmaan jo syötetyt tiedot");
+                 // tarkastele maksuja
+                // vielä työn alla
+                Console.WriteLine("=== Lista maksuista ===");
+                Console.WriteLine("Matka: " + /*sijanti +*/ Environment.NewLine + "Matkaan kulunut aika: "
+                /*+ lähtöaika*/ + ", " /*+ saapumisaika*/ + Environment.NewLine + "Matkan pituus: " + 
+                /*syötetytKilometrit +*/ Environment.NewLine + "Maksettava korvaus: " /*+ maksettavaKorvaus*/
+                + Environment.NewLine);
+
+                /*if (syötetytKilometrit != null)
+                {
+                    Console.WriteLine("Ei maksettavia korvauksia.");
+                }*/
                 break;
             }
 
@@ -100,29 +109,5 @@ class MainProgram
                 continue; // restart the loop
             }
         }
-
-
-        // luo uusi matka
-        Console.WriteLine("Matkan lähtöpiste ja päämäärä: ");
-
-        // onko 24h kellosta hankalaa laskea koodilla tunnit? 
-        // kannattaako lähtö- / saapumisaika vaihtaa siten, että asiakas syöttää suoraan vain tunnit?
-        Console.WriteLine("Lähtöaika: ");
-        Console.WriteLine("Saapumisaika: ");
-
-        Console.WriteLine("Matkaan yhteensä kuluneet kilometrit: ");
-        // jos syöte ei kokonaisluku int
-        Console.WriteLine("Syötä vain kokonaiset kilometrit. Pyöristä lähimpään kokonaislukuun: ");
-
-        /*
-        x: Name = "departureLabel"  Text = "Syöte muodossa 00:00, 24h mukaan"
-        x: Name = "departureInput1" Content = "Matkaan lähtöaika"
-
-        x: Name = "arrivalLabel" Content = "Saapumisaika kohteeseen"
-        x: Name = "arrivalInput"  Text = "Syöte muodossa 00:00, 24h mukaan"
-
-        x: Name = "kmLabel" Content = "Matkaan yhteensä kuluneet kilometrit" 
-        x: Name = "kmINput" Text = "Syöte muodossa 00,0km" 
-        */
     }
 }
