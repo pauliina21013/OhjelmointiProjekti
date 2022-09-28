@@ -4,9 +4,10 @@ class MainProgram
 
     static void Main(string[] args)
     {
-        TextUserInterface();
+        var newMainProgram = new MainProgram();
+        newMainProgram.TextUserInterface();
     }
-    private void TextUserInterface()
+    public void TextUserInterface()
     {
         TravelDetailsCollector travelDetailsCollector = new();
         while (true) // loops until the input is valid
@@ -237,7 +238,6 @@ class MainProgram
         //            Console.WriteLine("Syötettä ei voida hyväksyä." + Environment.NewLine);
         //            continue; // restart the loop
         //        }
-            }
-        }
+            
     }
 }
