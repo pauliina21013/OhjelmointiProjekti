@@ -37,7 +37,7 @@ class MainProgram
                 + Environment.NewLine);
 
                 // luo satunnaisen koodin laskulle, ei välttämättä tarpeellinen laisinkaan :D
-                Random paymentID = new Random();
+                Random paymentID = new();
 
                 for (int i = 0; i < 4; i++)
                 {
@@ -73,21 +73,31 @@ class MainProgram
 
             if (mainMenu2 == 1)
             {
+                travelDetailsCollector.InputAllTheNeccessaryValuesForASingleTrip();
                 decimal kilometriKorvaus = 0.46m; //korvaus euroina per kilometri
                 decimal puolipäiväRaha = 20m;     // 20 euroa jos yli 6 tuntia
                 decimal kokopäiväRaha = 45m;      // 45 euroa jos yli 10 tuntia
 
-                Console.WriteLine("Syötä matkan pituus kilometreinä");
-                var syote = Console.ReadLine();
-                if (syote != null)
+                //Console.WriteLine("Syötä matkan pituus kilometreinä");
+                List<TravelDetails> allDetails = travelDetailsCollector.GetAllTravelDetails();
+                int hours = 0;
+                int kilometers = 0;
+                foreach (var item in allDetails)
                 {
-                    int syötetytKilometrit = Int32.Parse(syote);
+                    hours += item.GetSumOfHours();
+                    kilometers += item.GetSumOfKilometers();
+                }
+                var syote = kilometers;
+                if (syote > 0)
+                {
+                    int syötetytKilometrit = syote;
 
                     Console.WriteLine("syötä matkan kesto tunteina");
-                    var matkanKestoSyote = Console.ReadLine();
-                    if (matkanKestoSyote != null)
+                    //TODO: fix argumentoutofrangeexception
+                    var matkanKestoSyote = hours;
+                    if (matkanKestoSyote > 0)
                     {
-                        int MatkanKesto = Int32.Parse(matkanKestoSyote);
+                        int MatkanKesto = matkanKestoSyote;
 
                         if (syötetytKilometrit <= 14)
                         {
