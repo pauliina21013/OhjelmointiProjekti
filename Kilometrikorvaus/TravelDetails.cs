@@ -18,6 +18,14 @@
             };
             return trip;
         }
+        public int GetSumOfKilometers()
+        {
+            return kilometersTravelled.Sum();
+        }
+        public int GetSumOfHours()
+        {
+            return hoursTravelled.Sum();
+        }
         public void AddKilometersTravelledInAList(int kilometers)
         {
             kilometersTravelled.Add(kilometers);

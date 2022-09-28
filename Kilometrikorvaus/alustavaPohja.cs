@@ -25,60 +25,74 @@ class MainProgram
             if (mainMenu1 == 1)
             {
                 // syötä matkoja
+
                 decimal kilometriKorvaus = 0.46m; //korvaus euroina per kilometri
                 decimal puolipäiväRaha = 20m;     // 20 euroa jos yli 6 tuntia
                 decimal kokopäiväRaha = 45m;      // 45 euroa jos yli 10 tuntia
 
-                Console.WriteLine("Syötä matkan pituus kilometreinä");
-                var syote = Console.ReadLine();
-                if (syote != null)
+                //Console.WriteLine("Syötä matkan pituus kilometreinä");
+                List<TravelDetails> allDetails = travelDetailsCollector.GetAllTravelDetails();
+                int hours = 0;
+                int kilometers = 0;
+                foreach (var item in allDetails)
                 {
-                    int syötetytKilometrit = Int32.Parse(syote);
+                    hours += item.GetSumOfHours();
+                    kilometers += item.GetSumOfKilometers();
+                }
+                var syote = kilometers;
+                if (syote > 0)
+                {
+                    int syötetytKilometrit = syote;
 
                     Console.WriteLine("syötä matkan kesto tunteina");
-                    int MatkanKesto = Int32.Parse(Console.ReadLine());
-
-                    if (syötetytKilometrit <= 14)
+                    //TODO: fix argumentoutofrangeexception
+                    var matkanKestoSyote = hours;
+                    if (matkanKestoSyote > 0)
                     {
-                        Console.WriteLine("Alle 15 km matkasta ei saa korvausta");
-                    }
-                    else
-                    {
+                        int MatkanKesto = matkanKestoSyote;
 
-                        Console.WriteLine();
-
-                        decimal maksettavaKorvaus = syötetytKilometrit * kilometriKorvaus;
-
-                        if (MatkanKesto >= 6 && MatkanKesto <= 9)
+                        if (syötetytKilometrit <= 14)
                         {
-                            Console.WriteLine("päivärahasi on " + puolipäiväRaha + " euroa");
-                            decimal korvausYhteensä = maksettavaKorvaus + puolipäiväRaha; // matkan korvaus yhteensä (kilometrit + päiväraha)
-                            Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
-                            Console.WriteLine();
-                            Console.WriteLine("korvauksesi yhteensä on  " + korvausYhteensä + " Euroa");
-
-
+                            Console.WriteLine("Alle 15 km matkasta ei saa korvausta");
                         }
-                        else if (MatkanKesto >= 9)
+                        else
                         {
-                            Console.WriteLine("päivärahasi on " + kokopäiväRaha + " euroa");
-                            decimal korvausYhteensä = maksettavaKorvaus + kokopäiväRaha; // matkan korvaus yhteensä (kilometrit + päiväraha)
-                            Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+
                             Console.WriteLine();
-                            Console.WriteLine("korvauksesi yhteensä on  " + korvausYhteensä + " Euroa");
+
+                            decimal maksettavaKorvaus = syötetytKilometrit * kilometriKorvaus;
+
+                            if (MatkanKesto >= 6 && MatkanKesto <= 9)
+                            {
+                                Console.WriteLine("päivärahasi on " + puolipäiväRaha + " euroa");
+                                decimal korvausYhteensä = maksettavaKorvaus + puolipäiväRaha; // matkan korvaus yhteensä (kilometrit + päiväraha)
+                                Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+                                Console.WriteLine();
+                                Console.WriteLine("korvauksesi yhteensä on  " + korvausYhteensä + " Euroa");
+
+
+                            }
+                            else if (MatkanKesto >= 9)
+                            {
+                                Console.WriteLine("päivärahasi on " + kokopäiväRaha + " euroa");
+                                decimal korvausYhteensä = maksettavaKorvaus + kokopäiväRaha; // matkan korvaus yhteensä (kilometrit + päiväraha)
+                                Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+                                Console.WriteLine();
+                                Console.WriteLine("korvauksesi yhteensä on  " + korvausYhteensä + " Euroa");
 
 
 
-                        }
-                        else if (MatkanKesto <= 5)
-                        {
-                            Console.WriteLine("päivärahasi on 0 euroa");
+                            }
+                            else if (MatkanKesto <= 5)
+                            {
+                                Console.WriteLine("päivärahasi on 0 euroa");
 
-                            Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
-                            Console.WriteLine();
-                            Console.WriteLine("korvauksesi yhteensä on  " + maksettavaKorvaus + " Euroa");
+                                Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+                                Console.WriteLine();
+                                Console.WriteLine("korvauksesi yhteensä on  " + maksettavaKorvaus + " Euroa");
 
 
+                            }
                         }
                     }
 
