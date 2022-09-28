@@ -36,6 +36,14 @@ class MainProgram
                 /*syötetytKilometrit +*/ Environment.NewLine + "Maksettava korvaus: " /*+ maksettavaKorvaus*/
                 + Environment.NewLine);
 
+                // luo satunnaisen koodin laskulle, ei välttämättä tarpeellinen laisinkaan :D
+                Random paymentID = new Random();
+
+                for (int i = 0; i < 4; i++)
+                {
+                    Console.WriteLine(paymentID.Next());
+                }
+
                 /*if (syötetytKilometrit != null)
                 {
                     Console.WriteLine("Ei maksettavia korvauksia.");
