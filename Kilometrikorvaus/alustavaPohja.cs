@@ -68,21 +68,24 @@ class MainProgram
                 decimal kilometriKorvaus = 0.46m; //korvaus euroina per kilometri
 
                 Console.WriteLine("Syötä matkan pituus kilometreinä");
-                int syötetytKilometrit = Int32.Parse(Console.ReadLine());
-                
-                if (syötetytKilometrit < 15)
-                {
-                    Console.WriteLine("Alle 15 km matkasta ei saa korvausta");
-                } 
+                var syote = Console.ReadLine();
+                if (syote != null) {
+                    int syötetytKilometrit = Int32.Parse(syote);
 
-                else
-                {
-                    Console.WriteLine();
-                    decimal maksettavaKorvaus = syötetytKilometrit * kilometriKorvaus;
+                    if (syötetytKilometrit < 15)
+                    {
+                        Console.WriteLine("Alle 15 km matkasta ei saa korvausta");
+                    }
 
-                    Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+                    else
+                    {
+                        Console.WriteLine();
+                        decimal maksettavaKorvaus = syötetytKilometrit * kilometriKorvaus;
+
+                        Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
 
 
+                    }
                 }
 
                 continue;
