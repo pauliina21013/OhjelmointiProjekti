@@ -1,7 +1,12 @@
 namespace Kilometrikorvaus;
 class MainProgram
 {
-    public void TextUserInterface()
+
+    static void Main(string[] args)
+    {
+        TextUserInterface();
+    }
+    private void TextUserInterface()
     {
         TravelDetailsCollector travelDetailsCollector = new();
         while (true) // loops until the input is valid
