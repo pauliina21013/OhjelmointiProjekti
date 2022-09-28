@@ -28,5 +28,32 @@
         {
             allTravelDetails[^1] = td;
         }
+        public void InputAllTheNeccessaryValuesForASingleTrip()
+        {
+            TravelDetails td = new();
+            td = GetTheLatestTravelDetails();
+            while (true)
+            {
+                Console.WriteLine("Syötä yhden päivän kilometrit: ");
+                var kilometersForOneDay = Console.ReadLine();
+                Console.WriteLine("Syötä yhden päivän matkustetut tunnit: ");
+                var hoursForOneDay = Console.ReadLine();
+                td.SetTravelDates();
+                if(kilometersForOneDay != null && hoursForOneDay != null)
+                {
+                    td.AddHoursTravelledInAList(int.Parse(hoursForOneDay));
+                    td.AddKilometersTravelledInAList(int.Parse(kilometersForOneDay));
+                }
+                Console.WriteLine("Syötitkö varmasti kaikki päivässä olleet kilometrit? (k/e)");
+                var answerInput = Console.ReadLine();
+                if(answerInput != null)
+                {
+                    if(answerInput.Equals("k"))
+                    {
+                        break;
+                    }
+                }
+            }
+        }
     }
 }
