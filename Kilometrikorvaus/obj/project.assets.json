@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Pessi\\.nuget\\packages\\": {},
+    "C:\\Users\\Aki Venho\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pessi\\Desktop\\mainprojects\\op-red\\Kilometrikorvaus\\Kilometrikorvaus.csproj",
+      "projectUniqueName": "C:\\Users\\Aki Venho\\Documents\\GitHub\\OhjelmointiProjekti\\Kilometrikorvaus\\Kilometrikorvaus.csproj",
       "projectName": "Kilometrikorvaus",
-      "projectPath": "C:\\Users\\Pessi\\Desktop\\mainprojects\\op-red\\Kilometrikorvaus\\Kilometrikorvaus.csproj",
-      "packagesPath": "C:\\Users\\Pessi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pessi\\Desktop\\mainprojects\\op-red\\Kilometrikorvaus\\obj\\",
+      "projectPath": "C:\\Users\\Aki Venho\\Documents\\GitHub\\OhjelmointiProjekti\\Kilometrikorvaus\\Kilometrikorvaus.csproj",
+      "packagesPath": "C:\\Users\\Aki Venho\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aki Venho\\Documents\\GitHub\\OhjelmointiProjekti\\Kilometrikorvaus\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Pessi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aki Venho\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

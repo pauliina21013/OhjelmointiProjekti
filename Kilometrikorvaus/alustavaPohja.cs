@@ -28,11 +28,11 @@ class MainProgram
 
             if (mainMenu1 == 2)
             {
-                 // tarkastele maksuja
+                // tarkastele maksuja
                 // vielä työn alla
                 Console.WriteLine("=== Lista maksuista ===");
                 Console.WriteLine("Matka: " + /*sijanti +*/ Environment.NewLine + "Matkaan kulunut aika: "
-                /*+ lähtöaika*/ + ", " /*+ saapumisaika*/ + Environment.NewLine + "Matkan pituus: " + 
+                /*+ lähtöaika*/ + ", " /*+ saapumisaika*/ + Environment.NewLine + "Matkan pituus: " +
                 /*syötetytKilometrit +*/ Environment.NewLine + "Maksettava korvaus: " /*+ maksettavaKorvaus*/
                 + Environment.NewLine);
 
@@ -66,50 +66,85 @@ class MainProgram
             if (mainMenu2 == 1)
             {
                 decimal kilometriKorvaus = 0.46m; //korvaus euroina per kilometri
+                decimal puolipäiväRaha = 20m;     // 20 euroa jos yli 6 tuntia
+                decimal kokopäiväRaha = 45m;      // 45 euroa jos yli 10 tuntia
 
                 Console.WriteLine("Syötä matkan pituus kilometreinä");
                 var syote = Console.ReadLine();
-                if (syote != null) {
+                if (syote != null)
+                {
                     int syötetytKilometrit = Int32.Parse(syote);
 
-                    if (syötetytKilometrit < 15)
+                    Console.WriteLine("syötä matkan kesto tunteina");
+                    int MatkanKesto = Int32.Parse(Console.ReadLine());
+
+                    if (syötetytKilometrit <= 14)
                     {
                         Console.WriteLine("Alle 15 km matkasta ei saa korvausta");
                     }
-
                     else
                     {
+
                         Console.WriteLine();
+
                         decimal maksettavaKorvaus = syötetytKilometrit * kilometriKorvaus;
 
-                        Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+                        if (MatkanKesto >= 6 && MatkanKesto <= 9)
+                        {
+                            Console.WriteLine("päivärahasi on " + puolipäiväRaha + " euroa");
+                            decimal korvausYhteensä = maksettavaKorvaus + puolipäiväRaha; // matkan korvaus yhteensä (kilometrit + päiväraha)
+                            Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+                            Console.WriteLine();
+                            Console.WriteLine("korvauksesi yhteensä on  " + korvausYhteensä + " Euroa");
 
 
+                        }
+                        else if (MatkanKesto >= 9)
+                        {
+                            Console.WriteLine("päivärahasi on " + kokopäiväRaha + " euroa");
+                            decimal korvausYhteensä = maksettavaKorvaus + kokopäiväRaha; // matkan korvaus yhteensä (kilometrit + päiväraha)
+                            Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+                            Console.WriteLine();
+                            Console.WriteLine("korvauksesi yhteensä on  " + korvausYhteensä + " Euroa");
+
+
+
+                        }
+                        else if (MatkanKesto <= 5)
+                        {
+                            Console.WriteLine("päivärahasi on 0 euroa");
+
+                            Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
+                            Console.WriteLine();
+                            Console.WriteLine("korvauksesi yhteensä on  " + maksettavaKorvaus + " Euroa");
+
+
+                        }
                     }
+
+                    continue;
                 }
 
-                continue;
-            }
+                if (mainMenu2 == 2)
+                {
+                    Console.WriteLine("Kilometrikorvausta maksetaan vain 15 km ylittävästä matkasta." + Environment.NewLine
+                    + "Korvausta maksetaan 0,46 euroa kilometriltä." + Environment.NewLine
+                    + "Kilometrikorvauksen lisäksi matkasta voidaan maksaa osapäivä- tai kokopäivärahaa." + Environment.NewLine
+                    + "Osapäivärahaa maksetaan yli 6 tunnin matkasta 20 euroa." + Environment.NewLine
+                    + "Kokopäivärahaa maksetaan yli 10 tunnin matkasta 45 euroa." + Environment.NewLine);
+                    continue;
+                }
 
-            if (mainMenu2 == 2)
-            {
-                Console.WriteLine("Kilometrikorvausta maksetaan vain 15 km ylittävästä matkasta." + Environment.NewLine
-                + "Korvausta maksetaan 0,46 euroa kilometriltä." + Environment.NewLine
-                + "Kilometrikorvauksen lisäksi matkasta voidaan maksaa osapäivä- tai kokopäivärahaa." + Environment.NewLine
-                + "Osapäivärahaa maksetaan yli 6 tunnin matkasta 20 euroa." + Environment.NewLine
-                + "Kokopäivärahaa maksetaan yli 10 tunnin matkasta 45 euroa." + Environment.NewLine);
-                continue;
-            }
+                if (mainMenu2 == 0)
+                {
+                    break;
+                }
 
-            if (mainMenu2 == 0)
-            {
-                break;
-            }
-
-            else
-            {
-                Console.WriteLine("Syötettä ei voida hyväksyä." + Environment.NewLine);
-                continue; // restart the loop
+                else
+                {
+                    Console.WriteLine("Syötettä ei voida hyväksyä." + Environment.NewLine);
+                    continue; // restart the loop
+                }
             }
         }
     }
