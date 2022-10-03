@@ -25,8 +25,7 @@ class MainProgram
             if (mainMenu1 == "1")
             {
                 // syötä matkoja
-                Console.WriteLine("Anna syötteet ilman loppuliitettä, esim km tai h. Syötä vain numeroja."
-                    + Enviroment.NewLine + "Syötä ohjelmaan vain yksi matka kerrallaan.")
+                Console.WriteLine("Anna syötteet ilman loppuliitettä, esim km tai h. Syötä vain numeroja. Syötä ohjelmaan vain yksi matka kerrallaan.");
 
                 decimal kilometriKorvaus = 0.46m; //korvaus euroina per kilometri
                 decimal puolipäiväRaha = 20m;     // 20 euroa jos yli 6 tuntia
