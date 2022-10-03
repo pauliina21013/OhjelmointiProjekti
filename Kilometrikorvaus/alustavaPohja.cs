@@ -15,15 +15,14 @@ class MainProgram
             Console.WriteLine("Kilometrikorvaus | Kirjoita numero" + Environment.NewLine + "[1] Syötä matkoja" + Environment.NewLine +
             "[2] Tarkastele maksuja" + Environment.NewLine + "[3] Korvauksen maksutiedot" + Environment.NewLine + "[0] Lopetus");
             Console.WriteLine();
-            var mm1 = Console.ReadLine();
-            int mainMenu1 = Convert.ToInt32(mm1);
+            var mainMenu1 = Console.ReadLine();
 
-            if (mainMenu1 == 0)
+            if (mainMenu1 == "0")
             {
                 System.Environment.Exit(0); // shuts the program down
             }
 
-            if (mainMenu1 == 1)
+            if (mainMenu1 == "1")
             {
                 // syötä matkoja
 
@@ -102,7 +101,7 @@ class MainProgram
 
             }
 
-            if (mainMenu1 == 2)
+            if (mainMenu1 == "2")
             {
                 // tarkastele maksuja
                 Console.WriteLine("=== Lista maksuista ===");
@@ -126,7 +125,7 @@ class MainProgram
                 break;
             }
 
-            if (mainMenu1 == 3)
+            if (mainMenu1 == "3")
             {
                 Console.WriteLine("Kilometrikorvausta maksetaan vain 15 km ylittävästä matkasta." + Environment.NewLine
                 + "Korvausta maksetaan 0,46 euroa kilometriltä." + Environment.NewLine
