@@ -32,7 +32,9 @@ class MainProgram
                 decimal kokopäiväRaha = 45m;      // 45 euroa jos yli 10 tuntia
 
                 //Console.WriteLine("Syötä matkan pituus kilometreinä");
-                List<TravelDetails> allDetails = travelDetailsCollector.GetAllTravelDetails();
+                TravelDetailsCollector tdc = new();
+                tdc.InputAllTheNeccessaryValuesForASingleTrip();
+                List<TravelDetails> allDetails = tdc.GetAllTravelDetails();
                 int hours = 0;
                 int kilometers = 0;
                 foreach (var item in allDetails)
