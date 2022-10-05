@@ -67,6 +67,8 @@ class MainProgram
 
                             decimal maksettavaKorvaus = syötetytKilometrit * kilometriKorvaus;
 
+                            decimal paivaraha = 0;
+
                             if (MatkanKesto >= 6 && MatkanKesto <= 9)
                             {
                                 Console.WriteLine("päivärahasi on " + puolipäiväRaha + " euroa");
@@ -74,7 +76,7 @@ class MainProgram
                                 Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
                                 Console.WriteLine();
                                 Console.WriteLine("korvauksesi yhteensä on  " + korvausYhteensä + " Euroa");
-
+                                paivaraha += puolipäiväRaha;
 
                             }
                             else if (MatkanKesto >= 9)
@@ -84,7 +86,7 @@ class MainProgram
                                 Console.WriteLine("Kilometrikorvauksesi on " + maksettavaKorvaus + " Euroa");
                                 Console.WriteLine();
                                 Console.WriteLine("korvauksesi yhteensä on  " + korvausYhteensä + " Euroa");
-
+                                paivaraha += kokopäiväRaha;
 
 
                             }
@@ -98,7 +100,8 @@ class MainProgram
 
 
                             }
-                            korvaukset.Add(maksettavaKorvaus);
+                            decimal lisattavakorvaus = maksettavaKorvaus + paivaraha;
+                            korvaukset.Add(lisattavakorvaus);
                         }
                     }
 
@@ -118,6 +121,15 @@ class MainProgram
 
                 // luo satunnaisen koodin laskulle, ei välttämättä tarpeellinen laisinkaan :D
                 //Random paymentID = new Random();
+                int id = 0;
+                foreach (var item in tdcc.GetAll())
+                {
+                    foreach (var item2 in item.GetAllTravelDetails())
+                    {
+                        Console.WriteLine("sijainti "+item2.GetSumOfHours()+" "+item2.GetSumOfKilometers()+" "+korvaukset[id]);
+                        id++;
+                    }
+                }
 
                 //for (int i = 0; i < 1; i++)
                 //{
