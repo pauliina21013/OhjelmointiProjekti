@@ -9,7 +9,8 @@ class MainProgram
     }
     public void TextUserInterface()
     {
-        TravelDetailsCollector travelDetailsCollector = new();
+        TravelDetailsCollectorCollector tdcc = new();
+        List<decimal> korvaukset = new();
         while (true) // loops until the input is valid
         {
             Console.WriteLine("Kilometrikorvaus | Kirjoita numero" + Environment.NewLine + "[1] Syötä matkoja" + Environment.NewLine +
@@ -35,6 +36,7 @@ class MainProgram
                 TravelDetailsCollector tdc = new();
                 tdc.InputAllTheNeccessaryValuesForASingleTrip();
                 List<TravelDetails> allDetails = tdc.GetAllTravelDetails();
+                tdcc.AddTravelDetails(tdc);
                 int hours = 0;
                 int kilometers = 0;
                 foreach (var item in allDetails)
@@ -96,6 +98,7 @@ class MainProgram
 
 
                             }
+                            korvaukset.Add(maksettavaKorvaus);
                         }
                     }
 

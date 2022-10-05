@@ -70,11 +70,11 @@
             var travelHour = Console.ReadLine();
             Console.WriteLine("Syötä lähdön minuutti");
             var travelMinute = Console.ReadLine();
-            if(travelDate != null && travelMonth != null && travelYear != null && travelHour != null && travelMinute != null)
+            if (travelDate != null && travelMonth != null && travelYear != null && travelHour != null && travelMinute != null)
             {
                 string formattedDate = "";
                 //travelDate checks
-                if(travelDate.Length < 2)
+                if (travelDate.Length < 2)
                 {
                     formattedDate += "0" + travelDate + "/";
                 }
@@ -83,16 +83,16 @@
                     formattedDate += travelDate + "/";
                 }
                 //travelMonth checks
-                if(travelMonth.Length < 2)
+                if (travelMonth.Length < 2)
                 {
                     formattedDate += "0" + travelMonth + "/";
                 }
-                else 
+                else
                 {
                     formattedDate += travelMonth + "/";
                 }
                 //travelYear checks
-                if(travelYear.Length < 2)
+                if (travelYear.Length < 2)
                 {
                     formattedDate += "0" + travelYear + " ";
                 }
@@ -120,6 +120,10 @@
                 }
                 travelDates.Add(formattedDate);
             }
+        }
+        public List<string> GetTravelDates()
+        {
+            return travelDates;
         }
         //TODO: peräkärrypoikkeukset yms. tähän omana funktionaan joka kysyy ne kaikki
     }
