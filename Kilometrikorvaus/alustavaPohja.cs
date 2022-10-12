@@ -113,11 +113,11 @@ class MainProgram
             if (mainMenu1 == "2")
             {
                 // tarkastele maksuja
-                Console.WriteLine("=== Lista maksuista ===");
-                Console.WriteLine("Matka: " + /*sijanti +*/ Environment.NewLine + "Matkaan kulunut aika: "
-                /*+ lähtöaika*/ + ", " /*+ saapumisaika*/ + Environment.NewLine + "Matkan pituus: " +
-                /*syötetytKilometrit +*/ Environment.NewLine + "Maksettava korvaus: " /*+ maksettavaKorvaus*/
-                + Environment.NewLine);
+                //Console.WriteLine("=== Lista maksuista ===");
+                //Console.WriteLine("Matka: " + /*sijanti +*/ Environment.NewLine + "Matkaan kulunut aika: "
+                ///*+ lähtöaika*/ + ", " /*+ saapumisaika*/ + Environment.NewLine + "Matkan pituus: " +
+                ///*syötetytKilometrit +*/ Environment.NewLine + "Maksettava korvaus: " /*+ maksettavaKorvaus*/
+                //+ Environment.NewLine);
 
                 // luo satunnaisen koodin laskulle, ei välttämättä tarpeellinen laisinkaan :D
                 // Random paymentID = new Random();
@@ -126,7 +126,9 @@ class MainProgram
                 {
                     foreach (var item2 in item.GetAllTravelDetails())
                     {
-                        Console.WriteLine("sijainti "+item2.GetSumOfHours()+" "+item2.GetSumOfKilometers()+" "+korvaukset[id]);
+                        Console.WriteLine("=== Lista maksuista ===" + Environment.NewLine + "Matkaan kulunut aika: "
+                        + item2.GetSumOfHours() + "h" + Environment.NewLine + "Matkan pituus: " + item2.GetSumOfKilometers()
+                        + "km" + Environment.NewLine + "Maksettava korvaus: " + korvaukset[id] + " euroa" + Environment.NewLine);
                         id++;
                     }
                 }
