@@ -34,9 +34,9 @@
             td = GetTheLatestTravelDetails();
             while (true)
             {
-                Console.WriteLine("Syötä yhden päivän kilometrit: ");
+                Console.WriteLine("Syötä yhden päivän kilometrit (kokonaislukuna): ");
                 var kilometersForOneDay = Console.ReadLine();
-                Console.WriteLine("Syötä yhden päivän matkustetut tunnit: ");
+                Console.WriteLine("Syötä yhden päivän matkustetut tunnit (1-24): ");
                 var hoursForOneDay = Console.ReadLine();
                 td.SetTravelDates();
                 if(kilometersForOneDay != null && hoursForOneDay != null)

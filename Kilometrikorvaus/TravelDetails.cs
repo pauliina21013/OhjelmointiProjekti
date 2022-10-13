@@ -60,15 +60,15 @@
         }
         public void SetTravelDates()
         {
-            Console.WriteLine("Syötä lähdön päivä");
+            Console.WriteLine("Syötä lähdön päivä (1-31)");
             var travelDate = Console.ReadLine();
-            Console.WriteLine("Syötä lähdön kuukausi");
+            Console.WriteLine("Syötä lähdön kuukausi (1-12)");
             var travelMonth = Console.ReadLine();
-            Console.WriteLine("Syötä lähdön vuosi");
+            Console.WriteLine("Syötä lähdön vuosi (YYYY)");
             var travelYear = Console.ReadLine();
-            Console.WriteLine("Syötä lähdön tunti");
+            Console.WriteLine("Syötä lähdön tunti (1-12)");
             var travelHour = Console.ReadLine();
-            Console.WriteLine("Syötä lähdön minuutti");
+            Console.WriteLine("Syötä lähdön minuutti (0-59)");
             var travelMinute = Console.ReadLine();
             if (travelDate != null && travelMonth != null && travelYear != null && travelHour != null && travelMinute != null)
             {
